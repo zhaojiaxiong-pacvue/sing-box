@@ -17,7 +17,7 @@ PROTOCOL_LIST=("XTLS + reality" "hysteria2" "tuic" "ShadowTLS" "shadowsocks" "tr
 NODE_TAG=("xtls-reality" "hysteria2" "tuic" "ShadowTLS" "shadowsocks" "trojan" "vmess-ws" "vless-ws-tls" "h2-reality" "grpc-reality" "anytls")
 CONSECUTIVE_PORTS=${#PROTOCOL_LIST[@]}
 CDN_DOMAIN=("skk.moe" "ip.sb" "time.is" "cfip.xxxxxxxx.tk" "bestcf.top" "cdn.2020111.xyz" "xn--b6gac.eu.org")
-SUBSCRIBE_TEMPLATE="https://raw.githubusercontent.com/fscarmen/client_template/main"
+SUBSCRIBE_TEMPLATE="https://raw.githubusercontent.com/zhaojiaxiong-pacvue/client_template/main"
 DEFAULT_NEWEST_VERSION='1.12.0-beta.15'
 
 export DEBIAN_FRONTEND=noninteractive
@@ -28,18 +28,18 @@ mkdir -p $TEMP_DIR
 
 E[0]="Language:\n 1. English (default) \n 2. 简体中文"
 C[0]="${E[0]}"
-E[1]="\\n 1. Reality Configuration Update: In Reality configurations, the original multiplexing (multiplex) has been replaced with xtls-rprx-vision flow control, improving transmission efficiency, reducing latency, and enhancing security. The original configuration conversion script command remains fully compatible and unchanged. — bash <(curl -sSL https://raw.githubusercontent.com/fscarmen/tools/main/vision.sh)\\n 2. Quick Install Mode: Added a one-click installation feature that auto-fills all parameters, simplifying the deployment process. Chinese users can use -l or -L; English users can use -k or -K. Case-insensitive support makes operations more flexible.\\n 3. Custom Reality Key Support: In response to user feedback, you can now specify a custom Reality private key via --REALITY_PRIVATE=<privateKey>. The script will automatically compute the corresponding public key using the integrated API. If left blank, it generates a random private-public key pair in real-time.\\n 4. Enhanced HTTP + Reality Support in Clash Clients: Added full compatibility for HTTP + Reality transport in Clash clients, improving connection stability and performance."
-C[1]="\\n 1. Reality 配置变更：在 Reality 配置中，将原来的多路复用（multiplex）替换为 xtls-rprx-vision 流控，提升传输效率、降低延迟并增强安全性。原配置转换脚本命令—— bash <(curl -sSL https://raw.githubusercontent.com/fscarmen/tools/main/vision.sh)\\n 2. 极速安装模式：新增一键安装功能，所有参数自动填充，简化部署流程。中文用户使用 -l 或 -L，英文用户使用 -k 或 -K，大小写均支持，操作更灵活\\n 3. 自定义 Reality 密钥支持：响应用户反馈，现支持通过 --REALITY_PRIVATE=<privateKey> 指定自定义 Reality 私钥，脚本将调用相关 API 自动计算对应公钥。若留空，则实时生成随机公私钥对\\n 4. HTTP + Reality 在 Clash 客户端的增强支持：补充了对 Clash 客户端中 HTTP + Reality 传输方式的完整兼容，提升了连接稳定性和性能"
+E[1]="\\n 1. Reality Configuration Update: In Reality configurations, the original multiplexing (multiplex) has been replaced with xtls-rprx-vision flow control, improving transmission efficiency, reducing latency, and enhancing security. The original configuration conversion script command remains fully compatible and unchanged. — bash <(curl -sSL https://raw.githubusercontent.com/zhaojiaxiong-pacvue/tools/main/vision.sh)\\n 2. Quick Install Mode: Added a one-click installation feature that auto-fills all parameters, simplifying the deployment process. Chinese users can use -l or -L; English users can use -k or -K. Case-insensitive support makes operations more flexible.\\n 3. Custom Reality Key Support: In response to user feedback, you can now specify a custom Reality private key via --REALITY_PRIVATE=<privateKey>. The script will automatically compute the corresponding public key using the integrated API. If left blank, it generates a random private-public key pair in real-time.\\n 4. Enhanced HTTP + Reality Support in Clash Clients: Added full compatibility for HTTP + Reality transport in Clash clients, improving connection stability and performance."
+C[1]="\\n 1. Reality 配置变更：在 Reality 配置中，将原来的多路复用（multiplex）替换为 xtls-rprx-vision 流控，提升传输效率、降低延迟并增强安全性。原配置转换脚本命令—— bash <(curl -sSL https://raw.githubusercontent.com/zhaojiaxiong-pacvue/tools/main/vision.sh)\\n 2. 极速安装模式：新增一键安装功能，所有参数自动填充，简化部署流程。中文用户使用 -l 或 -L，英文用户使用 -k 或 -K，大小写均支持，操作更灵活\\n 3. 自定义 Reality 密钥支持：响应用户反馈，现支持通过 --REALITY_PRIVATE=<privateKey> 指定自定义 Reality 私钥，脚本将调用相关 API 自动计算对应公钥。若留空，则实时生成随机公私钥对\\n 4. HTTP + Reality 在 Clash 客户端的增强支持：补充了对 Clash 客户端中 HTTP + Reality 传输方式的完整兼容，提升了连接稳定性和性能"
 E[2]="Downloading Sing-box. Please wait a seconds ..."
 C[2]="下载 Sing-box 中，请稍等 ..."
 E[3]="Input errors up to 5 times.The script is aborted."
 C[3]="输入错误达5次,脚本退出"
 E[4]="UUID should be 36 characters, please re-enter \(\${UUID_ERROR_TIME} times remaining\):"
 C[4]="UUID 应为36位字符,请重新输入 \(剩余\${UUID_ERROR_TIME}次\):"
-E[5]="The script supports Debian, Ubuntu, CentOS, Alpine, Fedora or Arch systems only. Feedback: [https://github.com/fscarmen/sing-box/issues]"
-C[5]="本脚本只支持 Debian、Ubuntu、CentOS、Alpine、Fedora 或 Arch 系统,问题反馈:[https://github.com/fscarmen/sing-box/issues]"
-E[6]="Curren operating system is \$SYS.\\\n The system lower than \$SYSTEM \${MAJOR[int]} is not supported. Feedback: [https://github.com/fscarmen/sing-box/issues]"
-C[6]="当前操作是 \$SYS\\\n 不支持 \$SYSTEM \${MAJOR[int]} 以下系统,问题反馈:[https://github.com/fscarmen/sing-box/issues]"
+E[5]="The script supports Debian, Ubuntu, CentOS, Alpine, Fedora or Arch systems only. Feedback: [https://github.com/zhaojiaxiong-pacvue/sing-box/issues]"
+C[5]="本脚本只支持 Debian、Ubuntu、CentOS、Alpine、Fedora 或 Arch 系统,问题反馈:[https://github.com/zhaojiaxiong-pacvue/sing-box/issues]"
+E[6]="Curren operating system is \$SYS.\\\n The system lower than \$SYSTEM \${MAJOR[int]} is not supported. Feedback: [https://github.com/zhaojiaxiong-pacvue/sing-box/issues]"
+C[6]="当前操作是 \$SYS\\\n 不支持 \$SYSTEM \${MAJOR[int]} 以下系统,问题反馈:[https://github.com/zhaojiaxiong-pacvue/sing-box/issues]"
 E[7]="Install dependence-list:"
 C[7]="安装依赖列表:"
 E[8]="All dependencies already exist and do not need to be installed additionally."
@@ -76,8 +76,8 @@ E[23]="Virtualization"
 C[23]="虚拟化"
 E[24]="Choose:"
 C[24]="请选择:"
-E[25]="Curren architecture \$(uname -m) is not supported. Feedback: [https://github.com/fscarmen/sing-box/issues]"
-C[25]="当前架构 \$(uname -m) 暂不支持,问题反馈:[https://github.com/fscarmen/sing-box/issues]"
+E[25]="Curren architecture \$(uname -m) is not supported. Feedback: [https://github.com/zhaojiaxiong-pacvue/sing-box/issues]"
+C[25]="当前架构 \$(uname -m) 暂不支持,问题反馈:[https://github.com/zhaojiaxiong-pacvue/sing-box/issues]"
 E[26]="Not install"
 C[26]="未安装"
 E[27]="close"
@@ -110,20 +110,20 @@ E[40]="Sing-box local verion: \$LOCAL\\\t The newest verion: \$ONLINE"
 C[40]="Sing-box 本地版本: \$LOCAL\\\t 最新版本: \$ONLINE"
 E[41]="No upgrade required."
 C[41]="不需要升级"
-E[42]="Downloading the latest version Sing-box failed, script exits. Feedback:[https://github.com/fscarmen/sing-box/issues]"
-C[42]="下载最新版本 Sing-box 失败，脚本退出，问题反馈:[https://github.com/fscarmen/sing-box/issues]"
-E[43]="The script must be run as root, you can enter sudo -i and then download and run again. Feedback:[https://github.com/fscarmen/sing-box/issues]"
-C[43]="必须以root方式运行脚本，可以输入 sudo -i 后重新下载运行，问题反馈:[https://github.com/fscarmen/sing-box/issues]"
+E[42]="Downloading the latest version Sing-box failed, script exits. Feedback:[https://github.com/zhaojiaxiong-pacvue/sing-box/issues]"
+C[42]="下载最新版本 Sing-box 失败，脚本退出，问题反馈:[https://github.com/zhaojiaxiong-pacvue/sing-box/issues]"
+E[43]="The script must be run as root, you can enter sudo -i and then download and run again. Feedback:[https://github.com/zhaojiaxiong-pacvue/sing-box/issues]"
+C[43]="必须以root方式运行脚本，可以输入 sudo -i 后重新下载运行，问题反馈:[https://github.com/zhaojiaxiong-pacvue/sing-box/issues]"
 E[44]="Ports are in used:  \${IN_USED[*]}"
 C[44]="正在使用中的端口: \${IN_USED[*]}"
 E[45]="Ports used: \${NOW_START_PORT} - \$((NOW_START_PORT+NOW_CONSECUTIVE_PORTS-1))"
 C[45]="使用端口: \${NOW_START_PORT} - \$((NOW_START_PORT+NOW_CONSECUTIVE_PORTS-1))"
 E[46]="Warp / warp-go was detected to be running. Please enter the correct server IP:"
 C[46]="检测到 warp / warp-go 正在运行，请输入确认的服务器 IP:"
-E[47]="No server ip, script exits. Feedback:[https://github.com/fscarmen/sing-box/issues]"
-C[47]="没有 server ip，脚本退出，问题反馈:[https://github.com/fscarmen/sing-box/issues]"
-E[48]="ShadowTLS - Copy the above two Neko links and manually set up the chained proxies in order. Tutorial: https://github.com/fscarmen/sing-box/blob/main/README.md#sekobox-%E8%AE%BE%E7%BD%AE-shadowtls-%E6%96%B9%E6%B3%95"
-C[48]="ShadowTLS - 复制上面两条 Neko links 进去，并按顺序手动设置链式代理，详细教程: https://github.com/fscarmen/sing-box/blob/main/README.md#sekobox-%E8%AE%BE%E7%BD%AE-shadowtls-%E6%96%B9%E6%B3%95"
+E[47]="No server ip, script exits. Feedback:[https://github.com/zhaojiaxiong-pacvue/sing-box/issues]"
+C[47]="没有 server ip，脚本退出，问题反馈:[https://github.com/zhaojiaxiong-pacvue/sing-box/issues]"
+E[48]="ShadowTLS - Copy the above two Neko links and manually set up the chained proxies in order. Tutorial: https://github.com/zhaojiaxiong-pacvue/sing-box/blob/main/README.md#sekobox-%E8%AE%BE%E7%BD%AE-shadowtls-%E6%96%B9%E6%B3%95"
+C[48]="ShadowTLS - 复制上面两条 Neko links 进去，并按顺序手动设置链式代理，详细教程: https://github.com/zhaojiaxiong-pacvue/sing-box/blob/main/README.md#sekobox-%E8%AE%BE%E7%BD%AE-shadowtls-%E6%96%B9%E6%B3%95"
 E[49]="Select more protocols to install (e.g. hgbd). The order of the port numbers of the protocols is related to the ordering of the multiple choices:\n a. all (default)"
 C[49]="多选需要安装协议(比如 hgbd)，协议的端口号次序与多选的排序有关:\n a. all (默认)"
 E[50]="Please enter the \$TYPE domain name:"
@@ -144,8 +144,8 @@ E[57]="Selecting the ws return method:\n 1. Argo (default)\n 2. Origin rules"
 C[57]="选择 ws 的回源方式:\n 1. Argo (默认)\n 2. Origin rules"
 E[58]="Memory Usage"
 C[58]="内存占用"
-E[59]="Install ArgoX scripts (argo + xray) [https://github.com/fscarmen/argox]"
-C[59]="安装 ArgoX 脚本 (argo + xray) [https://github.com/fscarmen/argox]"
+E[59]="Install ArgoX scripts (argo + xray) [https://github.com/zhaojiaxiong-pacvue/argox]"
+C[59]="安装 ArgoX 脚本 (argo + xray) [https://github.com/zhaojiaxiong-pacvue/argox]"
 E[60]="The order of the selected protocols and ports is as follows:"
 C[60]="选择的协议及端口次序如下:"
 E[61]="There are no replaceable Argo tunnels."
@@ -164,8 +164,8 @@ E[67]="(3/3) Confirm all protocols for reloading."
 C[67]="(3/3) 确认重装的所有协议"
 E[68]="Press [n] if there is an error, other keys to continue:"
 C[68]="如有错误请按 [n]，其他键继续:"
-E[69]="Install sba scripts (argo + sing-box) [https://github.com/fscarmen/sba]"
-C[69]="安装 sba 脚本 (argo + sing-box) [https://github.com/fscarmen/sba]"
+E[69]="Install sba scripts (argo + sing-box) [https://github.com/zhaojiaxiong-pacvue/sba]"
+C[69]="安装 sba 脚本 (argo + sing-box) [https://github.com/zhaojiaxiong-pacvue/sba]"
 E[70]="Please enter the reality private key (privateKey), skip to generate randomly:"
 C[70]="请输入 reality 的密钥(privateKey)，跳过则随机生成:"
 E[71]="Create shortcut [ sb ] successfully."
@@ -196,10 +196,10 @@ E[83]="To uninstall Nginx press [y], it is not uninstalled by default:"
 C[83]="如要卸载 Nginx 请按 [y]，默认不卸载:"
 E[84]="Set SElinux: enforcing --> disabled"
 C[84]="设置 SElinux: enforcing --> disabled"
-E[85]="Please input Argo Token or Json ( User can easily obtain the json at https://fscarmen.cloudflare.now.cc ):"
-C[85]="请输入 Argo Token 或者 Json ( 用户通过以下网站轻松获取 json: https://fscarmen.cloudflare.now.cc ):"
-E[86]="Argo authentication message does not match the rules, neither Token nor Json, script exits. Feedback:[https://github.com/fscarmen/sba/issues]"
-C[86]="Argo 认证信息不符合规则，既不是 Token，也是不是 Json，脚本退出，问题反馈:[https://github.com/fscarmen/sba/issues]"
+E[85]="Please input Argo Token or Json ( User can easily obtain the json at https://zhaojiaxiong-pacvue.cloudflare.now.cc ):"
+C[85]="请输入 Argo Token 或者 Json ( 用户通过以下网站轻松获取 json: https://zhaojiaxiong-pacvue.cloudflare.now.cc ):"
+E[86]="Argo authentication message does not match the rules, neither Token nor Json, script exits. Feedback:[https://github.com/zhaojiaxiong-pacvue/sba/issues]"
+C[86]="Argo 认证信息不符合规则，既不是 Token，也是不是 Json，脚本退出，问题反馈:[https://github.com/zhaojiaxiong-pacvue/sba/issues]"
 E[87]="Please input the Argo domain (Default is temporary domain if left blank):"
 C[87]="请输入 Argo 域名 (如果没有，可以跳过以使用 Argo 临时域名):"
 E[88]="Please input the Argo domain (cannot be empty):"
@@ -212,8 +212,8 @@ E[91]="Argo tunnel type:\n 1. Try\n 2. Token or Json"
 C[91]="Argo 隧道类型:\n 1. Try\n 2. Token 或者 Json"
 E[92]="Change the Argo tunnel (sb -t)"
 C[92]="更换 Argo 隧道 (sb -t)"
-E[93]="Can't get the temporary tunnel domain, script exits. Feedback:[https://github.com/fscarmen/sing-box/issues]"
-C[93]="获取不到临时隧道的域名，脚本退出，问题反馈:[https://github.com/fscarmen/sing-box/issues]"
+E[93]="Can't get the temporary tunnel domain, script exits. Feedback:[https://github.com/zhaojiaxiong-pacvue/sing-box/issues]"
+C[93]="获取不到临时隧道的域名，脚本退出，问题反馈:[https://github.com/zhaojiaxiong-pacvue/sing-box/issues]"
 E[94]="Please bind \[\${ARGO_DOMAIN}] tunnel TYPE to HTTP and URL to \[\localhost:\${PORT_NGINX}] in Cloudflare."
 C[94]="请在 Cloudflare 绑定 \[\${ARGO_DOMAIN}] 隧道 TYPE 为 HTTP，URL 为 \[\localhost:\${PORT_NGINX}]"
 E[95]="netfilter-persistent installation failed, but the installation progress will not stop. portHopping forwarding rules are temporary rules, reboot may be invalidated."
@@ -271,7 +271,7 @@ text() { grep -q '\$' <<< "${E[$*]}" && eval echo "\$(eval echo "\${${L}[$*]}")"
 
 # 检测是否需要启用 Github CDN，如能直接连通，则不使用
 check_cdn() {
-  [ -n "$GH_PROXY" ] && wget --server-response --quiet --output-document=/dev/null --no-check-certificate --tries=2 --timeout=3 ${GH_PROXY}https://raw.githubusercontent.com/fscarmen/sing-box/main/README.md >/dev/null 2>&1 || unset GH_PROXY
+  [ -n "$GH_PROXY" ] && wget --server-response --quiet --output-document=/dev/null --no-check-certificate --tries=2 --timeout=3 ${GH_PROXY}https://raw.githubusercontent.com/zhaojiaxiong-pacvue/sing-box/main/README.md >/dev/null 2>&1 || unset GH_PROXY
 }
 
 # 检测是否解锁 chatGPT，以决定是否使用 warp 链式代理或者是 direct out，此处判断改编自 https://github.com/lmc999/RegionRestrictionCheck
@@ -671,7 +671,7 @@ check_install() {
     wget --no-check-certificate --continue ${GH_PROXY}https://github.com/SagerNet/sing-box/releases/download/v$ONLINE/sing-box-$ONLINE-linux-$SING_BOX_ARCH.tar.gz -qO- | tar xz -C $TEMP_DIR sing-box-$ONLINE-linux-$SING_BOX_ARCH/sing-box >/dev/null 2>&1
     [ -s $TEMP_DIR/sing-box-$ONLINE-linux-$SING_BOX_ARCH/sing-box ] && mv $TEMP_DIR/sing-box-$ONLINE-linux-$SING_BOX_ARCH/sing-box $TEMP_DIR
     wget --no-check-certificate --continue -qO $TEMP_DIR/jq ${GH_PROXY}https://github.com/jqlang/jq/releases/download/jq-1.7.1/jq-linux-$JQ_ARCH >/dev/null 2>&1 && chmod +x $TEMP_DIR/jq >/dev/null 2>&1
-    wget --no-check-certificate --continue -qO $TEMP_DIR/qrencode ${GH_PROXY}https://github.com/fscarmen/client_template/raw/main/qrencode-go/qrencode-go-linux-$QRENCODE_ARCH >/dev/null 2>&1 && chmod +x $TEMP_DIR/qrencode >/dev/null 2>&1
+    wget --no-check-certificate --continue -qO $TEMP_DIR/qrencode ${GH_PROXY}https://github.com/zhaojiaxiong-pacvue/client_template/raw/main/qrencode-go/qrencode-go-linux-$QRENCODE_ARCH >/dev/null 2>&1 && chmod +x $TEMP_DIR/qrencode >/dev/null 2>&1
     }&
   fi
 
@@ -830,7 +830,7 @@ check_system_info() {
 # 获取 sing-box 最新版本
 get_sing_box_version() {
   # FORCE_VERSION 用于在 sing-box 某个主程序出现 bug 时，强制为指定版本，以防止运行出错
-  local FORCE_VERSION=$(wget --no-check-certificate --tries=2 --timeout=3 -qO- ${GH_PROXY}https://raw.githubusercontent.com/fscarmen/sing-box/refs/heads/main/force_version | sed 's/^[vV]//g; s/\r//g')
+  local FORCE_VERSION=$(wget --no-check-certificate --tries=2 --timeout=3 -qO- ${GH_PROXY}https://raw.githubusercontent.com/zhaojiaxiong-pacvue/sing-box/refs/heads/main/force_version | sed 's/^[vV]//g; s/\r//g')
   if grep -q '.' <<< "$FORCE_VERSION"; then
     local RESULT_VERSION="$FORCE_VERSION"
   else
@@ -3011,7 +3011,7 @@ create_shortcut() {
   cat > ${WORK_DIR}/sb.sh << EOF
 #!/usr/bin/env bash
 
-bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/fscarmen/sing-box/main/sing-box.sh) \$1
+bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/zhaojiaxiong-pacvue/sing-box/main/sing-box.sh) \$1
 EOF
   chmod +x ${WORK_DIR}/sb.sh
   ln -sf ${WORK_DIR}/sb.sh /usr/bin/sb
@@ -3541,8 +3541,8 @@ menu_setting() {
     ACTION[7]() { bash <(wget --no-check-certificate -qO- ${GH_PROXY}https://raw.githubusercontent.com/ylx2016/Linux-NetSpeed/master/tcp.sh); exit; }
     ACTION[8]() { change_protocols; exit; }
     ACTION[9]() { uninstall; exit; }
-    ACTION[10]() { bash <(wget --no-check-certificate -qO- ${GH_PROXY}https://raw.githubusercontent.com/fscarmen/argox/main/argox.sh) -$L; exit; }
-    ACTION[11]() { bash <(wget --no-check-certificate -qO- ${GH_PROXY}https://raw.githubusercontent.com/fscarmen/sba/main/sba.sh) -$L; exit; }
+    ACTION[10]() { bash <(wget --no-check-certificate -qO- ${GH_PROXY}https://raw.githubusercontent.com/zhaojiaxiong-pacvue/argox/main/argox.sh) -$L; exit; }
+    ACTION[11]() { bash <(wget --no-check-certificate -qO- ${GH_PROXY}https://raw.githubusercontent.com/zhaojiaxiong-pacvue/sba/main/sba.sh) -$L; exit; }
     ACTION[12]() { bash <(wget --no-check-certificate -qO- https://tcp.hy2.sh/); exit; }
   else
     OPTION[1]="1.  $(text 115)"
@@ -3561,8 +3561,8 @@ menu_setting() {
     ACTION[4]() { IS_SUB=is_sub; IS_ARGO=no_argo; install_sing-box; export_list install; create_shortcut; exit; }
     ACTION[5]() { install_sing-box; export_list install; create_shortcut; exit; }
     ACTION[6]() { bash <(wget --no-check-certificate -qO- ${GH_PROXY}https://raw.githubusercontent.com/ylx2016/Linux-NetSpeed/master/tcp.sh); exit; }
-    ACTION[7]() { bash <(wget --no-check-certificate -qO- ${GH_PROXY}https://raw.githubusercontent.com/fscarmen/argox/main/argox.sh) -$L; exit; }
-    ACTION[8]() { bash <(wget --no-check-certificate -qO- ${GH_PROXY}https://raw.githubusercontent.com/fscarmen/sba/main/sba.sh) -$L; exit; }
+    ACTION[7]() { bash <(wget --no-check-certificate -qO- ${GH_PROXY}https://raw.githubusercontent.com/zhaojiaxiong-pacvue/argox/main/argox.sh) -$L; exit; }
+    ACTION[8]() { bash <(wget --no-check-certificate -qO- ${GH_PROXY}https://raw.githubusercontent.com/zhaojiaxiong-pacvue/sba/main/sba.sh) -$L; exit; }
     ACTION[9]() { bash <(wget --no-check-certificate -qO- ${GH_PROXY}https://tcp.hy2.sh/); exit; }
   fi
 

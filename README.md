@@ -160,7 +160,7 @@ sb
 ### 方式1. 最快的安装方式：自动补充所有参数
 #### 中文
 ```
-bash <(wget -qO- https://raw.githubusercontent.com/fscarmen/sing-box/main/sing-box.sh) -l
+bash <(wget -qO- https://raw.githubusercontent.com/zhaojiaxiong-pacvue/sing-box/main/sing-box.sh) -l
 ```
 
 #### 英文
